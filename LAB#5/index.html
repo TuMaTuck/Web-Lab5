@@ -89,13 +89,15 @@
             transform: scale(1.05);
         }
         
-        .product-card .card-title {
+        /* Заголовки товарів */
+        .product-card .product-title {
+            font-size: 1.25rem;
+            font-weight: bold;
             margin: 10px 0 5px;
             color: #2f5d50;
-            font-weight: bold;
         }
         
-        .product-card .card-text {
+        .product-card .product-description {
             font-size: 14px;
             color: #666;
         }
@@ -173,7 +175,7 @@
     <!-- Фіксована навігація Bootstrap (sticky-top) -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="#">Logo</a>
+            <div class="navbar-brand fw-bold fs-3">Logo</div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -209,10 +211,10 @@
                 <div class="card product-card">
                     <img src="https://th.bing.com/th/id/R.194ccb07a1bdec2dd335421721bc1b2d?rik=AaR6Fp5FSH%2bfgg&pid=ImgRaw&r=0" class="card-img-top" alt="iPhone X">
                     <div class="card-body text-center">
-                        <h5 class="card-title">iPhone X</h5>
-                        <p class="card-text">Безрамковий OLED дисплей, Face ID</p>
+                        <h2 class="product-title">iPhone X</h2>
+                        <p class="product-description">Безрамковий OLED дисплей, Face ID</p>
                         <div class="price">$100</div>
-                        <button class="btn btn-custom">До кошика</button>
+                        <button class="btn btn-custom" type="button">До кошика</button>
                     </div>
                 </div>
             </div>
@@ -222,10 +224,10 @@
                 <div class="card product-card">
                     <img src="https://img.jabko.ua/image/cache/catalog/products/2022/04/081823/iphone11-black-select-2019-max-5120.jpg.webp" class="card-img-top" alt="iPhone 11">
                     <div class="card-body text-center">
-                        <h5 class="card-title">iPhone 11</h5>
-                        <p class="card-text">Подвійна камера, чудова автономність</p>
+                        <h2 class="product-title">iPhone 11</h2>
+                        <p class="product-description">Подвійна камера, чудова автономність</p>
                         <div class="price">$150</div>
-                        <button class="btn btn-custom">До кошика</button>
+                        <button class="btn btn-custom" type="button">До кошика</button>
                     </div>
                 </div>
             </div>
@@ -235,10 +237,10 @@
                 <div class="card product-card">
                     <img src="https://th.bing.com/th/id/R.10a14e6394eca91f2d7aeb507e2a347c?rik=9KxLYr1NQjVxeg&pid=ImgRaw&r=0" class="card-img-top" alt="iPhone 12">
                     <div class="card-body text-center">
-                        <h5 class="card-title">iPhone 12</h5>
-                        <p class="card-text">Підтримка 5G, OLED дисплей</p>
+                        <h2 class="product-title">iPhone 12</h2>
+                        <p class="product-description">Підтримка 5G, OLED дисплей</p>
                         <div class="price">$200</div>
-                        <button class="btn btn-custom">До кошика</button>
+                        <button class="btn btn-custom" type="button">До кошика</button>
                     </div>
                 </div>
             </div>
@@ -248,10 +250,10 @@
                 <div class="card product-card">
                     <img src="https://estore.ua/media/wysiwyg/blog/iphone13/iphone-13-blue-select-2021.jpeg" class="card-img-top" alt="iPhone 13">
                     <div class="card-body text-center">
-                        <h5 class="card-title">iPhone 13</h5>
-                        <p class="card-text">Потужний процесор A15 Bionic</p>
+                        <h2 class="product-title">iPhone 13</h2>
+                        <p class="product-description">Потужний процесор A15 Bionic</p>
                         <div class="price">$250</div>
-                        <button class="btn btn-custom">До кошика</button>
+                        <button class="btn btn-custom" type="button">До кошика</button>
                     </div>
                 </div>
             </div>
