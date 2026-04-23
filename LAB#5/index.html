@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Shop | Адаптивний магазин електроніки</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #f8f4e8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Кастомна навігація */
+        .navbar-custom {
+            background: linear-gradient(135deg, #f47c57 0%, #f26b4f 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+        
+        /* Банер з анімацією */
+        .hero-banner {
+            background: linear-gradient(120deg, #a8c9b8, #8fb89f);
+            padding: 70px 0;
+            text-align: center;
+            margin-top: 56px;
+            border-radius: 0 0 30px 30px;
+        }
+        
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2f5d50;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-banner p {
+            font-size: 1.2rem;
+            color: #2f5d50;
+            animation: fadeInUp 1s ease;
+        }
+        
+        /* Картки товарів */
+        .product-card {
+            background: #fff6e8;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            height: 100%;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-card img {
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .product-card .card-title {
+            margin: 10px 0 5px;
+            color: #2f5d50;
+            font-weight: bold;
+        }
+        
+        .product-card .card-text {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #f47c57;
+            margin: 10px 0;
+        }
+        
+        /* Стилізована кнопка */
+        .btn-custom {
+            background: linear-gradient(90deg, #f47c57, #f26b4f);
+            border: none;
+            padding: 8px 24px;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #e06542, #e05539);
+            box-shadow: 0 5px 15px rgba(242,107,79,0.4);
+        }
+        
+        /* Анімації */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Футер */
+        footer {
+            background: linear-gradient(135deg, #2f5d50, #1e3e35);
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        /* Адаптивні налаштування */
+        @media (max-width: 768px) {
+            .hero-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-banner {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Фіксована навігація Bootstrap (sticky-top) -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Продукти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Контакти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Банер з анімацією -->
+    <div class="hero-banner" data-aos="fade-down">
+        <div class="container">
+            <h1>Електротовари</h1>
+            <p>Найкращі смартфони за найкращими цінами</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <!-- Адаптивна сітка Bootstrap з товарами -->
+        <div class="row g-4">
+            <!-- Картка товару 1 - iPhone X -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="card product-card">
+                    <img src="https://th.bing.com/th/id/R.194ccb07a1bdec2dd335421721bc1b2d?rik=AaR6Fp5FSH%2bfgg&pid=ImgRaw&r=0" class="card-img-top" alt="iPhone X">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">iPhone X</h5>
+                        <p class="card-text">Безрамковий OLED дисплей, Face ID</p>
+                        <div class="price">$100</div>
+                        <button class="btn btn-custom">До кошика</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Картка товару 2 - iPhone 11 -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="https://img.jabko.ua/image/cache/catalog/products/2022/04/081823/iphone11-black-select-2019-max-5120.jpg.webp" class="card-img-top" alt="iPhone 11">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">iPhone 11</h5>
+                        <p class="card-text">Подвійна камера, чудова автономність</p>
+                        <div class="price">$150</div>
+                        <button class="btn btn-custom">До кошика</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Картка товару 3 - iPhone 12 -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="card product-card">
+                    <img src="https://th.bing.com/th/id/R.10a14e6394eca91f2d7aeb507e2a347c?rik=9KxLYr1NQjVxeg&pid=ImgRaw&r=0" class="card-img-top" alt="iPhone 12">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">iPhone 12</h5>
+                        <p class="card-text">Підтримка 5G, OLED дисплей</p>
+                        <div class="price">$200</div>
+                        <button class="btn btn-custom">До кошика</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Картка товару 4 - iPhone 13 -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="card product-card">
+                    <img src="https://estore.ua/media/wysiwyg/blog/iphone13/iphone-13-blue-select-2021.jpeg" class="card-img-top" alt="iPhone 13">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">iPhone 13</h5>
+                        <p class="card-text">Потужний процесор A15 Bionic</p>
+                        <div class="price">$250</div>
+                        <button class="btn btn-custom">До кошика</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">© 2025 Logo — Ваш надійний магазин електроніки</p>
+            <small>Адаптивний сайт на Bootstrap з анімаціями</small>
+        </div>
+    </footer>
+
+    <!-- Підключення скриптів -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Ініціалізація AOS анімацій
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
